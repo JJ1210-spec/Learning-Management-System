@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS-Learning Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    
+    <div class="container">
+        <header>
+            <!--user account details top-right-->
+            <div class="logo">Edulearn</div>
+            <div class="user-info">
+                <div>
+                    <h3 style="font-weight: 500;">Welcome</h3>
+                    <div style="font-size: 16px;color: #888;">std1@edulearn.com</div>
+
+                </div>
+                
+            </div>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchTab('dashboard')">DashBoard</button>
+            <button class="nav-tab" onclick="switchTab('courses')">My Courses</button>
+            <button class="nav-tab" onclick="switchTab('all-courses')">All courses</button>
+            <button class="nav-tab" onclick="switchTab('add-course')">Add course</button>
+            <button class="nav-tab" onclick="switchTab('certificates')">Certificates</button>
+        </div>
+
+        <div id ="dashboard" class = "content-section active">
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCourses">0</div>
+                    <div class="stat-label">Total Courses Enrolled</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="completedCourses">0</div>
+                    <div class="stat-label">completed Courses</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="totalHours">0</div>
+                    <div class="stat-label">Hours of Learning</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-value" id="avgProgress">0%</div>
+                    <div class="stat-label">Average Progress</div>
+                </div>
+
+                <div class="filler">
+                    <h2 style="margin: 20px;font-size:40px;">Continue Learning</h2>
+                    <div class="courses-grid" id="dashboardCourses">Start your learning journey by enrolling in a course!</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- My courses section-->
+        <div id="courses" class="content-section">
+            <h2 style="margin-bottom: 20px;font-size:40px; ">My Enrolled courses</h2>
+            <div id="enrolledCourses" class="courses-grid"></div>
+        </div>
+
+        <!--All Courses section-->
+        <div id="all-courses" class="content-section">
+            <h2 style="color:white; margin-bottom: 20px;">Available Courses</h2>
+            <div id="allCourses" class="courses-grid"></div>
+        </div>
+        
+        <!--Add Course Section-->
+        <div id="add-course" class="content-section">
+            <form class="add-course-form" onsubmit="addCourse(event)">
+                <h2>Create New Course</h2>
+                <div class="form-group">
+                    <label >Course Title</label>
+                    <input type="text" id="CourseTitle" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="CourseDescription" required></textarea>
+                </div>
+
+                <div class="form-group">
+                <label>Instructor Name</label>
+                <input type="text" id="courseInstructor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Duration(hours)</label>
+                    <input type="number" id="courseDuration" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Course</button>
+            </form>
+        </div>
+        <!--Certificate Section-->
+        <div id="certificates" class="content-section">
+            <h2 style="margin-bottom: 20px; text-align: center;font-size:40px;">My Certificates</h2>
+            <div id="certificatesList"></div>
+        </div>
+
+        <!--Course Detail Modal-->
+        <div id="courseModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>    
+    <script src="script.js"></script>
+</body>
+</html>
