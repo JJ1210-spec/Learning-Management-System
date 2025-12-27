@@ -152,5 +152,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Built with guidance from Claude AI
 - Inspired by modern LMS platforms like Coursera and Udemy
