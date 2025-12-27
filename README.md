@@ -146,9 +146,6 @@ Frontend runs on: `http://localhost:8000`
 **Your Name**
 - GitHub: [@yourusername](https://github.com/JJ1210-spec)
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
