@@ -1,0 +1,102 @@
+### TEST POST 
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "email": "test@email.com",
+    "password": "password123"
+}
+
+### 1. Register and save token
+# @name register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Jaiyanth",
+    "email": "jaiyanth@email.com",
+    "password": "password123"
+}
+
+###
+
+### 2. Get Current User (automatically uses token from register)
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer {{register.response.body.token}}
+
+
+### 1. Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Jitendra",
+    "email": "jitendra@email.com",
+    "password": "password1234"
+}
+
+###
+
+### 2. Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "jaiyanth@email.com",
+    "password": "password123"
+}
+
+###
+
+### 3. Get Current User
+GET http://localhost:5000/api/auth/me
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
+
+###
+
+### 4. Get All Courses (Public)
+GET http://localhost:5000/api/courses
+
+###
+
+### 5. Get Single Course
+GET http://localhost:5000/api/courses/1
+
+###
+
+### 6. Create Course (Needs Auth)
+POST http://localhost:5000/api/courses
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
+
+{
+    "title": "React Basics",
+    "description": "Learn React from scratch",
+    "instructor": "John Doe",
+    "duration": 50
+}
+
+###
+
+### 7. Enroll in Course
+POST http://localhost:5000/api/enrollments/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
+
+###
+
+### 8. Get My Enrolled Courses
+GET http://localhost:5000/api/enrollments/my-courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
+
+###
+
+### 9. Mark Lesson as Complete
+PUT http://localhost:5000/api/enrollments/1/lessons/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
+
+###
+
+### 10. Get Certificates
+GET http://localhost:5000/api/certificates
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc2NjMyNzU3Mn0.Qba4lSqiOz1wbwutLD6_9ZN8wfF1nHUpX9Dbt60ZYM0
