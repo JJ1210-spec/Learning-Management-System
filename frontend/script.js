@@ -54,7 +54,7 @@ let courses = [
 // Initialize the app when page loads
 document.addEventListener('DOMContentLoaded',function(){
     init();
-})
+});
 
 //Initialization functions
 function init(){

@@ -17,6 +17,50 @@ body{
     padding: 20px;
 }
 
+.auth-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background:linear-gradient(135deg,#6cfffd 0%,#ff87f7 100%);
+}
+
+.auth-container{
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-form{
+    display: none;
+}
+
+.auth-form.active{
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.auth-form h2{
+    text-align: center;
+    margin-bottom:30px ;
+    background:linear-gradient(135deg,#6cfffd 0%,#ff87f7 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+
+.auth-form a{
+    color:#009794;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-form a:hover{
+    text-decoration: underline;
+}
 .logo{
     font-size: 50px;
     background: linear-gradient(135deg,#009794 0%,#ff87f7 100%);
