@@ -144,7 +144,7 @@ Frontend runs on: `http://localhost:8000`
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@yourusername](https://github.com/JJ1210-spec)
 
 ## 📝 License
 
